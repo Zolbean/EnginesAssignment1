@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts And DLLs\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts And DLLs\RandomMovement.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/100623774/Documents/GitHub/EnginesAssignment1/Engines Assignment 1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
