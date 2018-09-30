@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts And DLLs\Controls.cs" />
-    <Compile Include="Assets\Scripts And DLLs\CreateObject.cs" />
     <Compile Include="Assets\Scripts And DLLs\RandomMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/100621626/Documents/GitHub/EnginesAssignment1/Engines Assignment 1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

@@ -45,10 +45,21 @@ namespace InputHandler
             obj.transform.Rotate(0, Time.deltaTime * 150f, 0);
         }
     }
+    public class CreateHorse : Command
+    {
+        GameObject dummy;
+        public override void Execute(GameObject obj)
+        {
+            dummy = GameObject.Instantiate(obj, obj.transform.position, obj.transform.rotation) as GameObject;
+        }
+    }
 
     public class Controls : MonoBehaviour
     {
         public GameObject player;
+        public GameObject spawn1;
+
+        private Stack<Command> undoStack;
         //~Player Movement~//
         public float speed = 2.0f;
         // Input information
@@ -62,6 +73,7 @@ namespace InputHandler
         public KeyCode backwardButton = KeyCode.S;
         public KeyCode leftButton = KeyCode.A;
         public KeyCode rightButton = KeyCode.D;
+        public KeyCode makeHorse = KeyCode.Q;
 
         public void handleInput()
         {
@@ -85,6 +97,17 @@ namespace InputHandler
             if (Input.GetKeyUp(rightButton))
                 rightPressed = false;
 
+            // Other Actions
+            if (Input.GetKeyDown(makeHorse))
+            {
+                spawn1.transform.SetPositionAndRotation(player.transform.position, player.transform.rotation);
+                Command tempHorse = new CreateHorse();
+                print("madeHorse\n");
+                //undoStack.Push(tempHorse);
+                print("spawnedHorse\n");
+                tempHorse.Execute(spawn1);
+                print("madeHorseEnd\n");
+            }
 
         }
 
