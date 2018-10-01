@@ -12,8 +12,6 @@ public class RandomMovement : MonoBehaviour {
         rDir = new Vector3(Random.Range(-100, 101), 0, Random.Range(-100, 100));
         rDir = rDir / 100;
         cdTime = Random.Range(1, 5);
-        print(cdTime);
-        print(rDir);
     }
 	
 	// Update is called once per frame
@@ -24,8 +22,6 @@ public class RandomMovement : MonoBehaviour {
             rDir = new Vector3(Random.Range(-100, 101), 0, Random.Range(-100, 100));
             rDir = rDir / 100;
             cdTime = Random.Range(1, 5);
-            print(cdTime);
-            print(rDir);
         }
         GetComponent<Rigidbody>().velocity = rDir * speed;
 

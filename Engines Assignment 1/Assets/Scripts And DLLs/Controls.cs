@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Observing;
 
 namespace InputHandler
@@ -48,7 +49,7 @@ namespace InputHandler
         }
     }
     // Undoable commands
-   
+
     public class CreateHorse : Command
     {
         public GameObject gameObject;
@@ -57,13 +58,18 @@ namespace InputHandler
         {
             gameObject = GameObject.Instantiate(obj, obj.transform.position, obj.transform.rotation) as GameObject;
             deleteOnUndo.Push(gameObject);
-            //ObserverWrapper.increment();
+            int tempBoi = ObserverWrapper.Increment();
+            Debug.Log("horse: " + tempBoi.ToString());
+            if (tempBoi >= 100)
+            {
+                GameObject.Find("Win Info").GetComponent<Text>().text = "WIN";
+            }
         }
         public override void Undo()
         {
             gameObject = deleteOnUndo.Pop();
             GameObject.Destroy(gameObject);
-            //ObserverWrapper.decrement();
+            ObserverWrapper.decrement();
         }
     }
 
@@ -160,7 +166,7 @@ namespace InputHandler
         // Use this for initialization
         void Start()
         {
-
+            ObserverWrapper.reset();
         }
 
         // Update is called once per frame
