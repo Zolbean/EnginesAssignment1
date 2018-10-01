@@ -493,48 +493,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1001 &145519097
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.3247776
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.6134963
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 12.658736
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833112337149158, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &158918641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1323,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e366073ce39ae49ad369fbfd7ff46d, type: 3}
+  m_IsPrefabAsset: 0
+--- !u!1001 &811860749
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.3247776
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.6134963
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 12.658736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036119572853036, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &950395742
 Prefab:
@@ -2601,7 +2601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1750585171}
-  spawn1: {fileID: 1355789792110652, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
+  spawn1: {fileID: 1278652056202268, guid: 290b2ed9b1dc3e9439eb9c15deff1187, type: 2}
   speed: 2
   forwardButton: 119
   backwardButton: 115

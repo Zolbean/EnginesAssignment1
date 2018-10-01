@@ -88,7 +88,7 @@ namespace InputHandler
         public KeyCode makeHorse = KeyCode.Q;
         public KeyCode undoButton = KeyCode.Z;
 
-        private Stack<GameObject> undoObjects = new Stack<GameObject>();
+        //private Stack<GameObject> undoObjects = new Stack<GameObject>();
 
         // Undo Function
         public void Undo()
