@@ -68,6 +68,8 @@ namespace InputHandler
         private bool backwardPressed = false;
         private bool leftPressed = false;
         private bool rightPressed = false;
+
+        public bool isExecuted = false;
         ///Keybindings
         public KeyCode forwardButton = KeyCode.W;
         public KeyCode backwardButton = KeyCode.S;
@@ -100,13 +102,14 @@ namespace InputHandler
             // Other Actions
             if (Input.GetKeyDown(makeHorse))
             {
+                isExecuted = true;
                 spawn1.transform.SetPositionAndRotation(player.transform.position, player.transform.rotation);
                 Command tempHorse = new CreateHorse();
-                print("madeHorse\n");
+                //print("madeHorse\n");
                 //undoStack.Push(tempHorse);
-                print("spawnedHorse\n");
+                //print("spawnedHorse\n");
                 tempHorse.Execute(spawn1);
-                print("madeHorseEnd\n");
+                //print("madeHorseEnd\n");
             }
 
         }
