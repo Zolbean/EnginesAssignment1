@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Observing;
 
 namespace InputHandler
 {
@@ -56,11 +57,13 @@ namespace InputHandler
         {
             gameObject = GameObject.Instantiate(obj, obj.transform.position, obj.transform.rotation) as GameObject;
             deleteOnUndo.Push(gameObject);
+            //ObserverWrapper.increment();
         }
         public override void Undo()
         {
             gameObject = deleteOnUndo.Pop();
             GameObject.Destroy(gameObject);
+            //ObserverWrapper.decrement();
         }
     }
 

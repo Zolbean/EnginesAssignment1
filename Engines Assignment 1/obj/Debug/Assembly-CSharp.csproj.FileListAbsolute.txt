@@ -168,3 +168,4 @@ C:\Users\100621626\Documents\GitHub\EnginesAssignment1\Engines Assignment 1\Temp
 C:\Users\100621626\Documents\GitHub\EnginesAssignment1\Engines Assignment 1\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\100621626\Documents\GitHub\EnginesAssignment1\Engines Assignment 1\obj\Debug\Assembly-CSharp.dll
 C:\Users\100621626\Documents\GitHub\EnginesAssignment1\Engines Assignment 1\obj\Debug\Assembly-CSharp.pdb
+C:\Users\100621626\Documents\GitHub\EnginesAssignment1\Engines Assignment 1\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
