@@ -9,6 +9,7 @@ namespace InputHandler
     {
         protected static Controls ControlAccess;
         public abstract void Execute(GameObject obj);
+        public virtual void Undo() { }
     }
     public class Nothing : Command
     {
@@ -45,12 +46,21 @@ namespace InputHandler
             obj.transform.Rotate(0, Time.deltaTime * 150f, 0);
         }
     }
+    // Undoable commands
+   
     public class CreateHorse : Command
     {
-        GameObject dummy;
+        public GameObject gameObject;
+        private Stack<GameObject> deleteOnUndo = new Stack<GameObject>();
         public override void Execute(GameObject obj)
         {
-            dummy = GameObject.Instantiate(obj, obj.transform.position, obj.transform.rotation) as GameObject;
+            gameObject = GameObject.Instantiate(obj, obj.transform.position, obj.transform.rotation) as GameObject;
+            deleteOnUndo.Push(gameObject);
+        }
+        public override void Undo()
+        {
+            gameObject = deleteOnUndo.Pop();
+            GameObject.Destroy(gameObject);
         }
     }
 
@@ -59,7 +69,9 @@ namespace InputHandler
         public GameObject player;
         public GameObject spawn1;
 
-        private Stack<Command> undoStack;
+        public Command tempHorse;
+
+        private Stack<Command> undoStack = new Stack<Command>();
         //~Player Movement~//
         public float speed = 2.0f;
         // Input information
@@ -74,6 +86,19 @@ namespace InputHandler
         public KeyCode leftButton = KeyCode.A;
         public KeyCode rightButton = KeyCode.D;
         public KeyCode makeHorse = KeyCode.Q;
+        public KeyCode undoButton = KeyCode.Z;
+
+        private Stack<GameObject> undoObjects = new Stack<GameObject>();
+
+        // Undo Function
+        public void Undo()
+        {
+            if (undoStack.Count > 0)
+            {
+                Command dieC = undoStack.Pop();
+                dieC.Undo();
+            }
+        }
 
         public void handleInput()
         {
@@ -101,12 +126,12 @@ namespace InputHandler
             if (Input.GetKeyDown(makeHorse))
             {
                 spawn1.transform.SetPositionAndRotation(player.transform.position, player.transform.rotation);
-                Command tempHorse = new CreateHorse();
-                print("madeHorse\n");
-                //undoStack.Push(tempHorse);
-                print("spawnedHorse\n");
-                tempHorse.Execute(spawn1);
-                print("madeHorseEnd\n");
+                undoStack.Push(new CreateHorse());
+                undoStack.Peek().Execute(spawn1);
+            }
+            if (Input.GetKeyDown(undoButton))
+            {
+                Undo();
             }
 
         }
